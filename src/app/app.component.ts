@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { name, address, phone, internet } from 'faker';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'checkin';
+  firstName = name.firstName();
+  surName = name.lastName();
+  prefix = name.prefix();
+  address = address.streetAddress();
+  city = address.cityName();
+  zipcode = address.zipCode();
+  email = internet.email();
+  phone = phone.phoneNumberFormat();
+
+  reload() {
+    // any other execution
+    window.location.reload();
+  }
 }
